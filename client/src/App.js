@@ -1,9 +1,9 @@
-
+import Landing from "./components/Landing";
 
 function App() {
   return (
     <div className="App">
-      <p>Hello world</p>
+      <Landing/>
     </div>
   );
 }
