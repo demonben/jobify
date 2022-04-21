@@ -4,6 +4,9 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
+      <Link to="/">Dashboard</Link>
+      <Link to="/register">Register</Link>
+      <Link to="/landing">Landing</Link>
       <Routes>
         <Route path="/" element={<div>Dashboard</div>} />
         <Route path="/register" element={<div>Register</div>} />
