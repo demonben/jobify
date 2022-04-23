@@ -1,0 +1,1 @@
+const connection = "mongodb+srv://Dima:<password>@nodeexpressprojects.oizy0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
