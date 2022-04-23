@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Wrapper from "../assets/wrappers/RegisterPage";
 import { Logo, FormRow, Alert } from "../components";
-import { DISPLAY_ALERT } from "../context/actions";
 import { useAppContext } from "../context/appContext";
 
 const initialState = {
