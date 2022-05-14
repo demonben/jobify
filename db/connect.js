@@ -1,1 +1,6 @@
-const connectionString = "mongodb+srv://Dima:<password>@nodeexpressprojects.oizy0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+import mongoose from "mongoose"
+
+const connectDB = (url)=>{
+ return mongoose.connect(url)
+}
+export default connectDB
