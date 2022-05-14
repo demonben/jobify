@@ -10,7 +10,6 @@ const app = express();
 // middleware
 
 app.get("/",(req, res)=>{
-    throw new Error('error')
     res.send("Welcome on server")
 })
 
