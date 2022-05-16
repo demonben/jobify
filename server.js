@@ -1,13 +1,14 @@
 import express from "express";
-import errorHandlerMiddleware from "./middleware/error-handler.js";
-import notFoundMiddleware from "./middleware/not-found.js";
+const app = express();
 import dotenv from 'dotenv'
 dotenv.config()
 
+import connectDB from "./db/connect.js";
 
-const app = express();
 
 // middleware
+import errorHandlerMiddleware from "./middleware/error-handler.js";
+import notFoundMiddleware from "./middleware/not-found.js";
 
 app.get("/",(req, res)=>{
     res.send("Welcome on server")
@@ -18,6 +19,17 @@ app.use(errorHandlerMiddleware)
 
 const port = process.env.PORT || 5001;
 
-app.listen(port, () => {
-  console.log(`server is listening ${port}...`);
-});
+
+const start =()=>{
+  try {
+    connectDB(process.env.MONGO_URL)
+    app.listen(port, () => {
+      console.log(`server is listening ${port}...`);
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+} 
+
+start()
