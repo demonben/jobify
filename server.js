@@ -5,7 +5,8 @@ dotenv.config();
 // db and authenticateUser
 import connectDB from "./db/connect.js";
 // routers
-import authRouter from "./routes/authRouter";
+import authRoutes from "./routes/authRoutes.js";
+import jobsRoutes from "./routes/jobsRoutes.js";
 // middleware
 import errorHandlerMiddleware from "./middleware/error-handler.js";
 import notFoundMiddleware from "./middleware/not-found.js";
@@ -16,7 +17,8 @@ app.get("/", (req, res) => {
   res.send("Welcome on server");
 });
 
-app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/jobs", jobsRoutes);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
