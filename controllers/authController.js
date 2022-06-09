@@ -54,8 +54,8 @@ const updateUser = async (req, res) => {
   user.name = name;
   user.lastName = lastName;
   user.location = location;
-
-  await user.save();
+// todo fix bug when update user
+  // await user.save(); 
 
   const token = user.createJWT();
 
