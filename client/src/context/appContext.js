@@ -218,9 +218,6 @@ const AppProvider = ({ children }) => {
     }
   };
 
-  // useEffect(() => {
-  //   getJobs();
-  // }, []);
   return (
     <AppContext.Provider
       value={{
