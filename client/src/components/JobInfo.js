@@ -1,11 +1,12 @@
-import React from 'react'
-import Wrapper from '../assets/wrappers/JobInfo'
-const JobInfo = () => {
+import React from "react";
+import Wrapper from "../assets/wrappers/JobInfo";
+const JobInfo = ({ icon, text }) => {
   return (
     <Wrapper>
-    <div>JobInfo</div>
+      <span className="icon">{icon}</span>
+      <span className="icon">{text}</span>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default JobInfo
+export default JobInfo;
