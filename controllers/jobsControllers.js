@@ -5,6 +5,7 @@ import {
   UnAuthenticatedError,
   NotFoundError,
 } from "../errors/index.js";
+import checkPermissions from "../utils/checkPermissions.js";
 
 const createJob = async (req, res) => {
   const { position, company } = req.body;
