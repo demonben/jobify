@@ -19,6 +19,7 @@ const Job = ({
 
   let date = moment(createdAt);
   date = date.format("MMM Do, YYYY");
+
   return (
     <Wrapper>
       <header>
