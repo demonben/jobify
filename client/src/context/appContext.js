@@ -28,6 +28,8 @@ import {
   EDIT_JOB_ERROR,
   SHOW_STATS_BEGIN,
   SHOW_STATS_SUCCESS,
+  CLEAR_FILTERS,
+  CHANGE_PAGE,
 } from "./actions";
 import reducer from "./reducers";
 
@@ -38,28 +40,33 @@ const userLocation = localStorage.getItem("location");
 export const initialState = {
   isLoading: false,
   showAlert: false,
-  alertText: "",
-  alertType: "",
+  alertText: '',
+  alertType: '',
   user: user ? JSON.parse(user) : null,
   token: token,
-  userLocation: userLocation || "",
+  userLocation: userLocation || '',
   showSidebar: false,
   isEditing: false,
-  editJobId: "",
-  position: "",
-  company: "",
-  jobLocation: userLocation || "",
-  jobTypeOption: ["full-time", "part-time", "remote", "internship"],
-  jobType: "full-time",
-  statusOptions: ["interview", "declined", "pending"],
-  status: "pending",
+  editJobId: '',
+  position: '',
+  company: '',
+  jobLocation: userLocation || '',
+  jobTypeOptions: ['full-time', 'part-time', 'remote', 'internship'],
+  jobType: 'full-time',
+  statusOptions: ['interview', 'declined', 'pending'],
+  status: 'pending',
   jobs: [],
   totalJobs: 0,
   numOfPages: 1,
   page: 1,
   stats: {},
   monthlyApplications: [],
-};
+  search: '',
+  searchStatus: 'all',
+  searchType: 'all',
+  sort: 'latest',
+  sortOptions: ['latest', 'oldest', 'a-z', 'z-a'],
+}
 
 
 
@@ -285,7 +292,12 @@ console.log(error.response)
 
 clearAlert()
   }
-
+  const clearFilters = () => {
+    dispatch({ type: CLEAR_FILTERS })
+  }
+  const changePage = (page) => {
+    dispatch({ type: CHANGE_PAGE, payload: { page } })
+  }
   return (
     <AppContext.Provider
       value={{
@@ -304,6 +316,8 @@ clearAlert()
         deleteJob,
         editJob,
         showStats,
+        clearFilters,
+        changePage,
       }}
     >
       {children}
