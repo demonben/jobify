@@ -53,7 +53,7 @@ export const initialState = {
   jobLocation: userLocation || "",
   jobTypeOptions: ["full-time", "part-time", "remote", "internship"],
   jobType: "full-time",
-  statusOptions: ["interview", "declined", "pending"],
+  statusOptions: ["interview", "decline", "pending"],
   status: "pending",
   jobs: [],
   totalJobs: 0,
@@ -291,8 +291,7 @@ const AppProvider = ({ children }) => {
         },
       });
     } catch (error) {
-      console.log(error.response);
-      // logoutUser()
+      logoutUser()
     }
 
     clearAlert();

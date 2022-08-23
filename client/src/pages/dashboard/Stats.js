@@ -6,6 +6,8 @@ const Stats = () => {
   const { showStats, isLoading, monthlyApplications } = useAppContext()
   useEffect(() => {
     showStats()
+    
+  // eslint-disable-next-line
   }, [])
 
   if (isLoading) {
@@ -21,3 +23,4 @@ const Stats = () => {
 }
 
 export default Stats
+// todo wrap showStats in useCallback

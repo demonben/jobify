@@ -13,7 +13,7 @@ const AddJob = () => {
     company,
     jobLocation,
     jobType,
-    jobTypeOption,
+    jobTypeOptions,
     status,
     statusOptions,
     handleChange,
@@ -78,9 +78,8 @@ const AddJob = () => {
             labelText="Job type"
             value={jobType}
             handleChange={handleJobInput}
-            list={jobTypeOption}
+            list={jobTypeOptions}
           />
-          {/* job status */}
           <FormRowSelect
             name="status"
             value={status}
